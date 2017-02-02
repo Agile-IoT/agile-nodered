@@ -40,4 +40,6 @@ RUN npm install -g node-red-contrib-graphs
 
 RUN npm install -g node-red-contrib-influxdb
 
+RUN npm install -g node-red-contrib-resinio
+
 CMD node-red
