@@ -23,9 +23,9 @@ RUN sudo npm install -g q
 
 EXPOSE 1880
 
-COPY . /root/agile-node-red-node
+COPY agile-node-red-nodes agile-node-red-nodes
 
-RUN npm install -g /root/agile-node-red-node
+RUN npm install -g agile-node-red-nodes
 
 RUN apt-get clean && apt-get update && apt-get install -y \
   curl 
