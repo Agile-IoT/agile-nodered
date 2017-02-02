@@ -1,5 +1,6 @@
 #FROM resin/amd64-debian:jessie
-FROM resin/rpi-raspbian:jessie
+#FROM resin/rpi-raspbian:jessie
+FROM resin/raspberrypi2-debian:jessie-20161010
 
 #RUN apt-get clean && apt-get update && apt-get install -y \
 #  npm \
