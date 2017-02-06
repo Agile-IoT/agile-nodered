@@ -1,19 +1,9 @@
 FROM resin/raspberrypi3-node:7.2.1
 
-#RUN apt-get clean && apt-get update && apt-get install -y \
-#  npm \
-#  nodejs-legacy  \
-#  build-essential
-
 # node-red
 RUN sudo npm install -g node-red
 #RUN apt-get clean && apt-get update && apt-get install -y \
 #  nodered
-# RUN sudo npm install -g --unsafe-perm node-red
-
-
-#upgrade npm to the newest version, otherwise we get build errors in node-red-contrib-graphs
-#RUN npm -g install npm
 
 # install npm Q
 RUN sudo npm install -g q
