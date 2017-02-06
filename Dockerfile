@@ -15,7 +15,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
   npm 
 
 #upgrade npm to the newest version, otherwise we get build errors in node-red-contrib-graphs
-RUN npm -g install npm
+#RUN npm -g install npm
 
 # install npm Q
 RUN sudo npm install -g q
