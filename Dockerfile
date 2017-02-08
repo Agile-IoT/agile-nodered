@@ -10,10 +10,6 @@ RUN sudo npm install -g q
 
 EXPOSE 1880
 
-COPY agile-node-red-nodes agile-node-red-nodes
-
-RUN npm install -g agile-node-red-nodes
-
 RUN npm install -g node-red-dashboard
 
 RUN npm install -g node-red-contrib-graphs
@@ -21,5 +17,9 @@ RUN npm install -g node-red-contrib-graphs
 RUN npm install -g node-red-contrib-influxdb
 
 RUN npm install -g node-red-contrib-resinio
+
+COPY agile-node-red-nodes agile-node-red-nodes
+
+RUN npm install -g agile-node-red-nodes
 
 CMD node-red
