@@ -18,8 +18,29 @@ RUN npm install -g node-red-contrib-influxdb
 
 RUN npm install -g node-red-contrib-resinio
 
-COPY agile-node-red-nodes agile-node-red-nodes
+#COPY agile-node-red-nodes /opt/agile-node-red-nodes
 
-RUN npm install -g agile-node-red-nodes
+#WORKDIR /opt/agile-node-red-nodes
 
-CMD node-red
+#RUN npm install -g 
+
+
+COPY secure-nodered /opt/secure-nodered
+
+
+
+COPY node-red-contrib-idm-token-node  /opt/node-red-idm-token-node
+
+RUN npm install -g git+https://github.com/Agile-IoT/node-red-contrib-idm-token-node.git
+
+WORKDIR /opt/secure-nodered
+
+RUN npm install
+
+RUN cp /opt/node-red-idm-token-node/idm-token/*.js  /opt/secure-nodered/node_modules/node-red/nodes/
+
+RUN cp /opt/node-red-idm-token-node/idm-token/*.html /opt/secure-nodered/node_modules/node-red/nodes/
+
+RUN cp /opt/secure-nodered/conf/agile-node-red-security-conf.js /opt/secure-nodered/conf/node-red-security-conf.js
+
+CMD node index

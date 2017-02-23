@@ -1,3 +1,9 @@
 [submodule "agile-node-red-nodes"]
 	path = agile-node-red-nodes
 	url = https://github.com/Agile-IoT/agile-node-red-nodes.git
+[submodule "secure-nodered"]
+	path = secure-nodered
+	url = https://github.com/Agile-IoT/secure-nodered
+[submodule "node-red-contrib-idm-token-node"]
+	path = node-red-contrib-idm-token-node
+	url = https://github.com/Agile-IoT/node-red-contrib-idm-token-node
