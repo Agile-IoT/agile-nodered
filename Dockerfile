@@ -31,16 +31,18 @@ COPY secure-nodered /opt/secure-nodered
 
 COPY node-red-contrib-idm-token-node  /opt/node-red-idm-token-node
 
-RUN npm install -g git+https://github.com/Agile-IoT/node-red-contrib-idm-token-node.git
+#RUN npm install -g git+https://github.com/Agile-IoT/node-red-contrib-idm-token-node.git
+
+WORKDIR /opt/node-red-idm-token-node
+
+RUN npm install -g
 
 WORKDIR /opt/secure-nodered
 
-RUN npm install
-
-RUN cp /opt/node-red-idm-token-node/idm-token/*.js  /opt/secure-nodered/node_modules/node-red/nodes/
-
-RUN cp /opt/node-red-idm-token-node/idm-token/*.html /opt/secure-nodered/node_modules/node-red/nodes/
+RUN npm link node-red
 
 RUN cp /opt/secure-nodered/conf/agile-node-red-security-conf.js /opt/secure-nodered/conf/node-red-security-conf.js
+
+RUN npm install
 
 CMD node index
