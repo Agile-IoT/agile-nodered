@@ -1,25 +1,31 @@
-language: node_js
+language: generic
 
 sudo: required
 
 services:
   - docker
 
+cache:
+  directories:
+    - $HOME/docker-cache/
+
 env:
-  - IMAGE=agileiot/agile-nodered-armv7l
-    DOCKER_CACHE_FILE=/home/travis/docker-cache/cache.tar.gz
+  global:
+    - COMPONENT=agile-nodered
+    - DOCKER_CACHE_FILE=/home/travis/docker-cache/cache.tar.gz
+  matrix:
+    - IMAGE=agileiot/$COMPONENT-armv7l
+    - IMAGE=agileiot/$COMPONENT-x86_64
+      BASEIMAGE=resin\\/nuc-node:7.2.1
 
 before_install:
-  - if [ -f /home/travis/docker-cache/cache.tar.gz ]; then
-      gunzip -c /home/travis/docker-cache/cache.tar.gz | docker load || true;
+  - if [ -f $DOCKER_CACHE_FILE ]; then
+      gunzip -c $DOCKER_CACHE_FILE | docker load || true;
     fi
-
-install:
-  - docker pull $IMAGE
-  - docker pull $IMAGE:$TRAVIS_BRANCH || true
 
 script:
   - docker run --rm --privileged multiarch/qemu-user-static:register
+  - if [ "$BASEIMAGE" ] ; then sed -i "s/^FROM .*/FROM $BASEIMAGE/" Dockerfile ; fi
   - docker build -t $IMAGE:$TRAVIS_BRANCH .
   - if [[ ${TRAVIS_PULL_REQUEST} == "false" ]]; then
       mkdir -p $(dirname ${DOCKER_CACHE_FILE});
