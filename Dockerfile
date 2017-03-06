@@ -18,11 +18,11 @@ RUN npm install -g node-red-contrib-influxdb
 
 RUN npm install -g node-red-contrib-resinio
 
-#COPY agile-node-red-nodes /opt/agile-node-red-nodes
+COPY agile-node-red-nodes /opt/agile-node-red-nodes
 
-#WORKDIR /opt/agile-node-red-nodes
+WORKDIR /opt/agile-node-red-nodes
 
-#RUN npm install -g 
+RUN npm install -g 
 
 
 COPY secure-nodered /opt/secure-nodered
