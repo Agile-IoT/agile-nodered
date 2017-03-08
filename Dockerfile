@@ -22,4 +22,8 @@ COPY agile-node-red-nodes agile-node-red-nodes
 
 RUN npm install -g agile-node-red-nodes
 
+# adding Xively support
+COPY node-red-contrib-agile-xively node-red-contrib-agile-xively
+RUN npm install -g node-red-contrib-agile-xively
+
 CMD node-red
