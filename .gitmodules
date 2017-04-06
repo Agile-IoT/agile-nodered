@@ -7,3 +7,6 @@
 [submodule "node-red-contrib-idm-token-node"]
 	path = node-red-contrib-idm-token-node
 	url = https://github.com/Agile-IoT/node-red-contrib-idm-token-node
+[submodule "node-red-contrib-agile-xively"]
+	path = node-red-contrib-agile-xively
+	url = https://github.com/Agile-IoT/node-red-contrib-agile-xively.git

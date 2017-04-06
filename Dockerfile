@@ -24,14 +24,9 @@ WORKDIR /opt/agile-node-red-nodes
 
 RUN npm install -g 
 
-
 COPY secure-nodered /opt/secure-nodered
 
-
-
 COPY node-red-contrib-idm-token-node  /opt/node-red-idm-token-node
-
-#RUN npm install -g git+https://github.com/Agile-IoT/node-red-contrib-idm-token-node.git
 
 WORKDIR /opt/node-red-idm-token-node
 
@@ -44,5 +39,9 @@ RUN npm link node-red
 RUN cp /opt/secure-nodered/conf/agile-node-red-security-conf.js /opt/secure-nodered/conf/node-red-security-conf.js
 
 RUN npm install
+
+# adding Xively support
+COPY node-red-contrib-agile-xively node-red-contrib-agile-xively
+RUN npm install -g node-red-contrib-agile-xively
 
 CMD node index
