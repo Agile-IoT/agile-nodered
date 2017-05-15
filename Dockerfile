@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-node:7.2.1
+FROM resin/raspberry-pi3-node:7.8.0-20170426
 
 # node-red
 RUN sudo npm install -g node-red
