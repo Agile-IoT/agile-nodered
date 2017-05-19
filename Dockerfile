@@ -1,7 +1,7 @@
 FROM resin/raspberry-pi3-node:7.8.0-20170426
 
 # node-red
-RUN sudo npm install -g node-red
+RUN sudo npm install -g node-red@0.16.2
 #RUN apt-get clean && apt-get update && apt-get install -y \
 #  nodered
 
@@ -34,7 +34,7 @@ RUN npm link
 
 COPY secure-nodered /opt/secure-nodered
 
-COPY node-red-contrib-idm-token-node  /opt/node-red-contrib-security-nodes
+COPY node-red-contrib-security-nodes  /opt/node-red-contrib-security-nodes
 
 WORKDIR /opt/node-red-contrib-security-nodes
 
