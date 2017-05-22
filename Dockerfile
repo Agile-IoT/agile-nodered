@@ -24,24 +24,11 @@ WORKDIR /opt/agile-node-red-nodes
 
 RUN npm install -g
 
-#begin change agile-stack npm
-#needed for now due to npm issue https://github.com/Agile-IoT/agile-sdk/issues/12
-RUN git clone https://github.com/Agile-IoT/agile-sdk /opt/agile-sdk
-WORKDIR /opt/agile-sdk
-RUN npm install
-RUN npm link
-# end change agile-stack
-
 COPY secure-nodered /opt/secure-nodered
 
 COPY node-red-contrib-security-nodes  /opt/node-red-contrib-security-nodes
 
 WORKDIR /opt/node-red-contrib-security-nodes
-
-#begin change agile-stack npm
-#needed for now due to npm issue https://github.com/Agile-IoT/agile-sdk/issues/12
-RUN npm link agile-sdk
-#end change agile-stack
 
 RUN npm install -g
 
