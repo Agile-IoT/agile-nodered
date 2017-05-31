@@ -10,3 +10,7 @@
 [submodule "node-red-contrib-security-nodes"]
 	path = node-red-contrib-security-nodes
 	url = https://github.com/Agile-IoT/node-red-contrib-security-nodes
+[submodule "agile-sdk"]
+	path = agile-sdk
+	url = https://github.com/agile-iot/agile-sdk
+	branch = security
