@@ -16,4 +16,4 @@
 	branch = security
 [submodule "node-red-contrib-agile-fiware"]
 	path = node-red-contrib-agile-fiware
-	url = git@github.com:Agile-IoT/node-red-contrib-agile-fiware.git
+	url = https://github.com/Agile-IoT/node-red-contrib-agile-fiware.git
