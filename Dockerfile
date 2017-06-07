@@ -59,6 +59,7 @@ RUN npm link agile-node-red-nodes
 # adding Xively support
 COPY node-red-contrib-agile-xively node-red-contrib-agile-xively
 RUN npm install -g node-red-contrib-agile-xively
+RUN npm link node-red-contrib-agile-xively
 
 # adding FIWARE support
 COPY node-red-contrib-agile-fiware node-red-contrib-agile-fiware
