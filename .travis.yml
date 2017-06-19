@@ -1,4 +1,6 @@
-language: generic
+language: node_js
+node_js:
+  - "7"
 
 sudo: required
 
@@ -15,6 +17,7 @@ env:
     - DOCKER_CACHE_FILE=/home/travis/docker-cache/cache.tar.gz
   matrix:
     - DOCKER_IMAGE=agileiot/$COMPONENT-armv7l
+      VERSIONIST=true
     - DOCKER_IMAGE=agileiot/$COMPONENT-x86_64
       BASEIMAGE=resin\\/intel-nuc-node:7.8.0-20170506
 
@@ -30,3 +33,4 @@ script:
 
 after_success:
   - docker_push_if_needed
+  - versionist_if_needed
