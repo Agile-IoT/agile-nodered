@@ -22,7 +22,7 @@ module.exports = {
   getGitReferenceFromVersion: 'v-prefix',
   incrementVersion: 'semver',
   updateVersion: [
-    plugins.npm.updatePackageJSON,
+    //plugins.npm.updatePackageJSON,
     plugins.git.commit,
     plugins.git.tag,
     plugins.git.push
