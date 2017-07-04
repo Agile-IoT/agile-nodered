@@ -44,4 +44,4 @@ RUN npm link node-red-contrib-security-nodes
 
 EXPOSE 1880
 
-CMD node index
+CMD mkdir -p .nodered/node_modules && node index
