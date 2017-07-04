@@ -43,6 +43,5 @@ RUN npm link node-red-contrib-security-nodes
 #RUN npm link node-red-contrib-agile-fiware
 
 EXPOSE 1880
-ENV NODE_RED_HOME=/opt/secure-nodered/.nodered
 
 CMD mkdir -p .nodered/node_modules && node index
