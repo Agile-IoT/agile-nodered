@@ -1,5 +1,5 @@
-FROM resin/raspberry-pi3-node:7.8.0-20170426
-#FROM resin/nuc-node:7
+ARG BASEIMAGE_BUILD=resin/raspberry-pi3-node:7.8.0-20170426
+FROM $BASEIMAGE_BUILD
 
 COPY secure-nodered /opt/secure-nodered
 WORKDIR /opt/secure-nodered
