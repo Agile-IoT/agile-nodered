@@ -45,7 +45,7 @@ ARG NODE=node-red-contrib-agile-googledrive
 COPY $NODE $NODE
 RUN npm install $NODE
 
-ARG NODE=node-red-contrib-thingspeak42
+ARG NODE=node-red-contrib-agile-thingspeak
 COPY $NODE $NODE
 RUN npm install $NODE
 
