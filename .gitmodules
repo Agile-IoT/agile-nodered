@@ -26,3 +26,6 @@
 [submodule "node-red-contrib-agile-solid"]
 	path = node-red-contrib-agile-solid
 	url = https://github.com/Agile-IoT/node-red-contrib-agile-solid.git
+[submodule "node-red-contrib-thingspeak42"]
+	path = node-red-contrib-thingspeak42
+	url = https://github.com/clough42/node-red-contrib-thingspeak42.git
