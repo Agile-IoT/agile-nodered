@@ -33,6 +33,18 @@ ARG NODE=node-red-contrib-agile-fiware
 COPY $NODE $NODE
 RUN npm install $NODE
 
+ARG NODE=node-red-contrib-agile-solid
+COPY $NODE $NODE
+RUN npm install $NODE
+
+ARG NODE=node-red-contrib-agile-owncloud
+COPY $NODE $NODE
+RUN npm install $NODE
+
+ARG NODE=node-red-contrib-agile-googledrive
+COPY $NODE $NODE
+RUN npm install $NODE
+
 #All these are now included as dependencies in the secure-nodered
 #RUN npm install node-red-dashboard
 #RUN npm install  node-red-contrib-graphs
