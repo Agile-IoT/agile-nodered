@@ -19,16 +19,19 @@ WORKDIR node-red-contrib-security-nodes
 RUN npm install && npm link agile-sdk && npm link
 WORKDIR ..
 
-COPY agile-node-red-nodes agile-node-red-nodes
-RUN npm install agile-node-red-nodes
+ARG NODE=agile-node-red-nodes
+COPY $NODE $NODE
+RUN npm install $NODE
 
 # adding Xively support
-COPY node-red-contrib-agile-xively node-red-contrib-agile-xively
-RUN npm install node-red-contrib-agile-xively
+ARG NODE=node-red-contrib-agile-xively 
+COPY $NODE $NODE
+RUN npm install $NODE
 
 # adding FIWARE support
-COPY node-red-contrib-agile-fiware node-red-contrib-agile-fiware
-RUN npm install node-red-contrib-agile-fiware
+ARG NODE=node-red-contrib-agile-fiware
+COPY $NODE $NODE
+RUN npm install $NODE
 
 #All these are now included as dependencies in the secure-nodered
 #RUN npm install node-red-dashboard
