@@ -19,35 +19,35 @@ WORKDIR node-red-contrib-security-nodes
 RUN npm install && npm link agile-sdk && npm link
 WORKDIR ..
 
-ARG NODE=agile-node-red-nodes
-COPY $NODE $NODE
-RUN npm install $NODE
+ARG AGILE=agile-node-red-nodes
+COPY $AGILE $AGILE
+RUN npm install $AGILE
 
 # adding Xively support
-ARG NODE=node-red-contrib-agile-xively 
-COPY $NODE $NODE
-RUN npm install $NODE
+ARG XIVELY=node-red-contrib-agile-xively 
+COPY $XIVELY $XIVELY
+RUN npm install $XIVELY
 
 # adding FIWARE support
-ARG NODE=node-red-contrib-agile-fiware
-COPY $NODE $NODE
-RUN npm install $NODE
+ARG FIWARE=node-red-contrib-agile-fiware
+COPY $FIWARE $FIWARE
+RUN npm install $FIWARE
 
-ARG NODE=node-red-contrib-agile-solid
-COPY $NODE $NODE
-RUN npm install $NODE
+ARG SOLID=node-red-contrib-agile-solid
+COPY $SOLID $SOLID
+RUN npm install $SOLID
 
-ARG NODE=node-red-contrib-agile-owncloud
-COPY $NODE $NODE
-RUN npm install $NODE
+ARG OWNCLOUD=node-red-contrib-agile-owncloud
+COPY $OWNCLOUD $OWNCLOUD
+RUN npm install $OWNCLOUD
 
-ARG NODE=node-red-contrib-agile-googledrive
-COPY $NODE $NODE
-RUN npm install $NODE
+ARG GDRIVE=node-red-contrib-agile-googledrive
+COPY $GDRIVE $GDRIVE
+RUN npm install $GDRIVE
 
-ARG NODE=node-red-contrib-agile-thingspeak
-COPY $NODE $NODE
-RUN npm install $NODE
+ARG THINGSPEAK=node-red-contrib-agile-thingspeak
+COPY $THINGSPEAK $THINGSPEAK
+RUN npm install $THINGSPEAK
 
 #All these are now included as dependencies in the secure-nodered
 #RUN npm install node-red-dashboard
