@@ -17,3 +17,6 @@
 [submodule "node-red-contrib-agile-fiware"]
 	path = node-red-contrib-agile-fiware
 	url = https://github.com/Agile-IoT/node-red-contrib-agile-fiware.git
+[submodule "node-red-contrib-agile-recommender"]
+	path = node-red-contrib-agile-recommender
+	url = https://github.com/Agile-IoT/node-red-contrib-agile-recommender.git

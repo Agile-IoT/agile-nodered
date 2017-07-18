@@ -30,6 +30,12 @@ RUN npm install node-red-contrib-agile-xively
 COPY node-red-contrib-agile-fiware node-red-contrib-agile-fiware
 RUN npm install node-red-contrib-agile-fiware
 
+# adding Agile-Recommender support
+COPY node-red-contrib-agile-recommender node-red-contrib-agile-recommender
+RUN npm install node-red-contrib-agile-recommender
+
+
+
 #All these are now included as dependencies in the secure-nodered
 #RUN npm install node-red-dashboard
 #RUN npm install  node-red-contrib-graphs
