@@ -23,6 +23,7 @@ env:
 
 before_install:
   - source <(curl -s https://raw.githubusercontent.com/Agile-IoT/agile-ci-scripts/master/agile-ci-functions.sh)
+  - docker_upgrade
   - cache_load
   - bootstrap
   - echo "Tagging the build with tag - $DOCKER_TAG"
