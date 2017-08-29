@@ -1,3 +1,13 @@
+#-------------------------------------------------------------------------------
+# Copyright (C) 2017 Create-Net / FBK.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+# 
+# Contributors:
+#     Create-Net / FBK - initial API and implementation
+#-------------------------------------------------------------------------------
 FROM resin/raspberry-pi3-node:7.8.0-20170426
 #FROM resin/nuc-node:7
 
@@ -19,16 +29,35 @@ WORKDIR node-red-contrib-security-nodes
 RUN npm install && npm link agile-sdk && npm link
 WORKDIR ..
 
-COPY agile-node-red-nodes agile-node-red-nodes
-RUN npm install agile-node-red-nodes
+ARG AGILE=agile-node-red-nodes
+COPY $AGILE $AGILE
+RUN npm install $AGILE
 
 # adding Xively support
-COPY node-red-contrib-agile-xively node-red-contrib-agile-xively
-RUN npm install node-red-contrib-agile-xively
+ARG XIVELY=node-red-contrib-agile-xively 
+COPY $XIVELY $XIVELY
+RUN npm install $XIVELY
 
 # adding FIWARE support
-COPY node-red-contrib-agile-fiware node-red-contrib-agile-fiware
-RUN npm install node-red-contrib-agile-fiware
+ARG FIWARE=node-red-contrib-agile-fiware
+COPY $FIWARE $FIWARE
+RUN npm install $FIWARE
+
+ARG SOLID=node-red-contrib-agile-solid
+COPY $SOLID $SOLID
+RUN npm install $SOLID
+
+ARG OWNCLOUD=node-red-contrib-agile-owncloud
+COPY $OWNCLOUD $OWNCLOUD
+RUN npm install $OWNCLOUD
+
+ARG GDRIVE=node-red-contrib-agile-googledrive
+COPY $GDRIVE $GDRIVE
+RUN npm install $GDRIVE
+
+ARG THINGSPEAK=node-red-contrib-agile-thingspeak
+COPY $THINGSPEAK $THINGSPEAK
+RUN npm install $THINGSPEAK
 
 # adding Agile-Recommender support
 COPY node-red-contrib-agile-recommender node-red-contrib-agile-recommender

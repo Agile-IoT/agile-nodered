@@ -20,3 +20,15 @@
 [submodule "node-red-contrib-agile-recommender"]
 	path = node-red-contrib-agile-recommender
 	url = https://github.com/Agile-IoT/node-red-contrib-agile-recommender.git
+[submodule "node-red-contrib-agile-owncloud"]
+	path = node-red-contrib-agile-owncloud
+	url = https://github.com/Agile-IoT/node-red-contrib-agile-owncloud.git
+[submodule "node-red-contrib-agile-googledrive"]
+	path = node-red-contrib-agile-googledrive
+	url = https://github.com/Agile-IoT/node-red-contrib-agile-googledrive.git
+[submodule "node-red-contrib-agile-solid"]
+	path = node-red-contrib-agile-solid
+	url = https://github.com/Agile-IoT/node-red-contrib-agile-solid.git
+[submodule "node-red-contrib-agile-thingspeak"]
+	path = node-red-contrib-agile-thingspeak
+	url = https://github.com/Agile-IoT/node-red-contrib-agile-thingspeak.git
