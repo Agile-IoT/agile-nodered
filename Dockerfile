@@ -19,14 +19,9 @@ RUN npm install
 # install npm Q
 RUN npm install q
 
-COPY agile-sdk agile-sdk
-WORKDIR agile-sdk
-RUN npm install && npm link
-WORKDIR ..
-
 COPY node-red-contrib-security-nodes  node-red-contrib-security-nodes
 WORKDIR node-red-contrib-security-nodes
-RUN npm install && npm link agile-sdk && npm link
+RUN npm install
 WORKDIR ..
 
 ARG AGILE=agile-node-red-nodes
