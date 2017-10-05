@@ -60,17 +60,9 @@ RUN npm install node-red-contrib-agile-recommender
 
 
 
-#All these are now included as dependencies in the secure-nodered
-#RUN npm install node-red-dashboard
-#RUN npm install  node-red-contrib-graphs
-#RUN npm install  node-red-contrib-influxdb
-#RUN npm install  node-red-contrib-resinio
 
 RUN npm link node-red-contrib-security-nodes
 
-#RUN npm link agile-node-red-nodes
-#RUN npm link node-red-contrib-agile-xively
-#RUN npm link node-red-contrib-agile-fiware
 
 EXPOSE 1880
 
