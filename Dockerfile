@@ -19,10 +19,9 @@ RUN npm install
 # install npm Q
 RUN npm install q
 
-COPY node-red-contrib-security-nodes  node-red-contrib-security-nodes
-WORKDIR node-red-contrib-security-nodes
-RUN npm install
-WORKDIR ..
+ARG SECURITY=node-red-contrib-security-nodes
+COPY $SECURITY $SECURITY
+RUN npm install $SECURITY
 
 ARG AGILE=agile-node-red-nodes
 COPY $AGILE $AGILE
@@ -57,12 +56,6 @@ RUN npm install $THINGSPEAK
 # adding Agile-Recommender support
 COPY node-red-contrib-agile-recommender node-red-contrib-agile-recommender
 RUN npm install node-red-contrib-agile-recommender
-
-
-
-
-RUN npm link node-red-contrib-security-nodes
-
 
 EXPOSE 1880
 
