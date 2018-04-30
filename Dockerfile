@@ -11,6 +11,7 @@
 #     Create-Net / FBK - initial API and implementation
 #-------------------------------------------------------------------------------
 ARG BASEIMAGE_BUILD=resin/raspberry-pi3-node:7.8.0-20170426
+ARG BASEIMAGE_DEPLOY=resin/raspberry-pi3-node:7.8.0-slim-20170426
 FROM $BASEIMAGE_BUILD
 
 COPY secure-nodered /opt/secure-nodered
@@ -58,6 +59,10 @@ RUN npm install $THINGSPEAK
 # adding Agile-Recommender support
 COPY node-red-contrib-agile-recommender node-red-contrib-agile-recommender
 RUN npm install node-red-contrib-agile-recommender
+
+FROM $BASEIMAGE_DEPLOY
+COPY --from=0 /opt/secure-nodered /opt/secure-nodered
+WORKDIR /opt/secure-nodered
 
 EXPOSE 1880
 
