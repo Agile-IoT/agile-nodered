@@ -64,6 +64,12 @@ FROM $BASEIMAGE_DEPLOY
 COPY --from=0 /opt/secure-nodered /opt/secure-nodered
 WORKDIR /opt/secure-nodered
 
+#
+# Only for rpi: vcgencmd support
+# https://forums.resin.io/t/cant-run-vcgencmd/39
+#
+RUN apt-get update && apt-get install -y libraspberrypi-bin
+
 EXPOSE 1880
 
 CMD mkdir -p .nodered/node_modules && node index
