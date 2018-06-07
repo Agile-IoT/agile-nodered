@@ -56,6 +56,10 @@ ARG THINGSPEAK=node-red-contrib-agile-thingspeak
 COPY $THINGSPEAK $THINGSPEAK
 RUN npm install $THINGSPEAK
 
+ARG DEPLOYER=node-red-contrib-agile-deployer
+COPY $DEPLOYER $DEPLOYER
+RUN npm install $DEPLOYER
+
 # adding Agile-Recommender support
 COPY node-red-contrib-agile-recommender node-red-contrib-agile-recommender
 RUN npm install node-red-contrib-agile-recommender
