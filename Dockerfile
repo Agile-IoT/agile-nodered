@@ -72,7 +72,7 @@ WORKDIR /opt/secure-nodered
 # Only for rpi: vcgencmd support
 # https://forums.resin.io/t/cant-run-vcgencmd/39
 #
-RUN apt-get update && apt-get install -y libraspberrypi-bin
+RUN apt-get update && apt-get install -y libraspberrypi-bin || echo "libraspberrypi-bin not available"
 
 EXPOSE 1880
 
