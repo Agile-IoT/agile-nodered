@@ -74,6 +74,12 @@ WORKDIR /opt/secure-nodered
 #
 RUN apt-get update && apt-get install -y libraspberrypi-bin || echo "libraspberrypi-bin not available"
 
+RUN apt-get install -y lm-sensors || echo "lm-sensors not available"
+
+RUN apt-get install sysstat
+
+COPY start.sh /opt/secure-nodered
+
 EXPOSE 1880
 
-CMD mkdir -p .nodered/node_modules && node index
+CMD ./start.sh
