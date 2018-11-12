@@ -78,7 +78,7 @@ RUN apt-get install -y lm-sensors || echo "lm-sensors not available"
 
 RUN apt-get install sysstat
 
-COPY start.sh /opt/secure-nodered
+COPY start.sh sar.sh /opt/secure-nodered/
 
 EXPOSE 1880
 
