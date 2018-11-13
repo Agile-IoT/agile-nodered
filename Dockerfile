@@ -56,6 +56,10 @@ ARG THINGSPEAK=node-red-contrib-agile-thingspeak
 COPY $THINGSPEAK $THINGSPEAK
 RUN npm install $THINGSPEAK
 
+ARG DEPLOYER=node-red-contrib-agile-deployer
+COPY $DEPLOYER $DEPLOYER
+RUN npm install $DEPLOYER
+
 # adding Agile-Recommender support
 COPY node-red-contrib-agile-recommender node-red-contrib-agile-recommender
 RUN npm install node-red-contrib-agile-recommender
@@ -64,6 +68,18 @@ FROM $BASEIMAGE_DEPLOY
 COPY --from=0 /opt/secure-nodered /opt/secure-nodered
 WORKDIR /opt/secure-nodered
 
+#
+# Only for rpi: vcgencmd support
+# https://forums.resin.io/t/cant-run-vcgencmd/39
+#
+RUN apt-get update && apt-get install -y libraspberrypi-bin || echo "libraspberrypi-bin not available"
+
+RUN apt-get install -y lm-sensors || echo "lm-sensors not available"
+
+RUN apt-get install sysstat
+
+COPY start.sh sar.sh /opt/secure-nodered/
+
 EXPOSE 1880
 
-CMD mkdir -p .nodered/node_modules && node index
+CMD ./start.sh

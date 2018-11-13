@@ -32,3 +32,6 @@
 [submodule "node-red-contrib-agile-thingspeak"]
 	path = node-red-contrib-agile-thingspeak
 	url = https://github.com/Agile-IoT/node-red-contrib-agile-thingspeak.git
+[submodule "node-red-contrib-agile-deployer"]
+	path = node-red-contrib-agile-deployer
+	url = https://github.com/Agile-IoT/node-red-contrib-agile-deployer.git
